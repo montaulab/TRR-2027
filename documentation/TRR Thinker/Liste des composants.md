@@ -1,0 +1,7 @@
+- 4x Mecanum  wheel
+- 4x Moteur 12V
+- 2x Controlleurs de puissance
+- 1x Arduino DUE
+- 1x ESP32 (wifi)
+- 1x LiDar (RPLidar A1m8)
+- 2x Capteurs de ligne blanche
