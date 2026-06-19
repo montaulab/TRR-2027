@@ -26,7 +26,54 @@
 
 \begin{document}
 
-\maketitle
+% \maketitle
+
+
+\begin{titlepage}
+    \centering
+
+    % Logos
+    \includegraphics[width=4cm]{logo.png}
+    \vspace{1em}
+
+    % Titre
+    {\Huge\bfseries Voiture Autonome Omnidirectionnelle\par}
+    \vspace{0.5em}
+
+    {\Large Rapport de Conception et Développement\par}
+    \vspace{1.5em}
+
+    % Image principale
+    % \includegraphics[width=0.8\textwidth]{car/nice.jpg}
+    \vspace{1.5em}
+    \newpage
+
+    % Informations générales
+    \begin{tabular}{rl}
+        Auteur : & Cyprien Siaud \\
+        Date de début : & 18/06/2025 \\
+        Date de fin : & ??/??/???? \\
+    \end{tabular}
+
+    \vfill
+
+    % Résumé court
+    \begin{minipage}{0.85\textwidth}
+        \centering
+        Ce rapport présente la conception, le développement et les tests d'une voiture autonome omnidirectionnelle capable de se déplacer librement dans toutes les directions grâce à un système de roues omnidirectionnelles et à une architecture de navigation autonome.
+        
+        \vspace{2em}
+
+        Ce projet a pour objectif la participation à la Tiny Toulouse Robot Race (Tiny TRR) 2027, une compétition de robotique autonome où des véhicules miniatures doivent parcourir un circuit prédéfini le plus rapidement possible sans intervention humaine. La conception du véhicule vise à optimiser la vitesse, la précision de navigation et la fiabilité du système dans des conditions réelles de course.
+    \end{minipage}
+
+    \vfill
+
+    % {\large \today\par}
+
+\end{titlepage}
+
+% =========================================================
 
 \tableofcontents
 % \newpage
@@ -158,5 +205,15 @@ Le véhicule est composé de deux ensembles complémentaires : la partie mécani
   \item deux contrôleurs de puissance assurant l’alimentation des quatre moteurs ;
   \item un module ESP32 (Wi-Fi) permettant une interface de contrôle et de supervision du véhicule.
 \end{itemize}
+
+% =========================================================
+
+\chapter{Composants matériel}
+% =========================================================
+
+\section{la structure}
+
+Réalisée à l'aide de profilés aluminium de 30x30mm la structure est composée de 2 parties maintenues ensembles par un palier et une tige filetée.
+
 
 \end{document}
