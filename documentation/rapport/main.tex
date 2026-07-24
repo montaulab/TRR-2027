@@ -4,11 +4,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{geometry}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{chngcntr}
+
 
 \counterwithin{figure}{section} % numérotaion auto des figures en fonction de la section
 \graphicspath{{images/}} % Set du dossier des images
@@ -18,6 +19,19 @@
   right=1.5cm,
   top=2cm,
   bottom=1.5cm
+}
+
+\newcommand{\customPanelLeft}[3][\linewidth]{
+    \noindent
+    \begin{minipage}[t]{#1}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth]{#2}
+    \end{minipage}\hfill%
+    \begin{minipage}[t]{0.68\textwidth}
+        \vspace{0pt}\raggedright
+        #3
+    \end{minipage}
 }
 
 \title{Rapport technique\\Véhicule autonome omnidirectionnel}
@@ -155,7 +169,6 @@ La piste centrale est constituée d’une sérigraphie noire de 5 cm de large, d
     \centering
     \includegraphics[width=0.75\textwidth]{piste.png}
     \caption{Plan de la piste}
-    \label{fig:mesh}
 \end{figure}
 
 % =========================
@@ -199,10 +212,10 @@ Le véhicule est composé de deux ensembles complémentaires : la partie mécani
 
 \textbf{Partie électronique :}
 \begin{itemize}
-  \item un lidar rotatif 360° pour l’analyse des bords de piste ;
-  \item deux capteurs de ligne permettant de distinguer le noir du blanc afin de maintenir l’alignement au centre de la piste ;
-  \item une carte Arduino DUE offrant une puissance de calcul supérieure à une carte Arduino classique ;
-  \item deux contrôleurs de puissance assurant l’alimentation des quatre moteurs ;
+  \item un lidar rotatif 360° pour l’analyse des bords de piste
+  \item deux capteurs de ligne permettant de distinguer le noir du blanc afin de maintenir l’alignement au centre de la piste
+  \item une carte Arduino DUE offrant une puissance de calcul supérieure à une carte Arduino classique
+  \item deux contrôleurs de puissance assurant l’alimentation des quatre moteurs
   \item un module ESP32 (Wi-Fi) permettant une interface de contrôle et de supervision du véhicule.
 \end{itemize}
 
@@ -211,9 +224,37 @@ Le véhicule est composé de deux ensembles complémentaires : la partie mécani
 \chapter{Composants matériel}
 % =========================================================
 
-\section{la structure}
+\section{La structure}
 
 Réalisée à l'aide de profilés aluminium de 30x30mm la structure est composée de 2 parties maintenues ensembles par un palier et une tige filetée.
+
+Le palier et la tige filetée permettent une rotation entre la partie avant et arrière du véhicule.
+
+\vspace{2em}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{car/structure.png}
+	\caption{Structure aluminium de la voiture}
+\end{figure}
+
+\newpage
+
+\section{Les roues mecanum}
+
+Les roues mecanum sont un type de roues omnidirectionnelles permettant à un véhicule de se diriger dans toutes les directions : aussi bien sur le côté que vers l'avant et l'arrière.
+
+Ces roues ont été inventées par le suédois Bengt Ilon en 1973, alors employé par la société Mecanum AB.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{wheel/wheel.jpg}
+	\caption{Roues Omnidirectionnelle Mecanum}
+\end{figure}
+
+\customPanelLeft[0.1\textwidth]{wheel/front.png}{
+  Ces roues omnidirectionnelles possèdent des rouleaux orientés à 45°, ce qui permet de créer tous les mouvements que l'on souhaite en faisant tourner les bommes roues dans les bon sens.
+}
 
 
 \end{document}
